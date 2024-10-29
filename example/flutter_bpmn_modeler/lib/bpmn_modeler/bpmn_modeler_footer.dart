@@ -197,10 +197,10 @@ class BpmnModelerFooter extends StatelessWidget {
     String? saveFileName,
   }) async {
     final originSvg = await getSvgFromModeler(modeler);
-    final svgRoot = await svg.fromSvgString(originSvg, originSvg);
-    final width = svgRoot.viewport.width.toInt();
-    final height = svgRoot.viewport.height.toInt();
-    final svgImage = await svgRoot.toPicture().toImage(width, height);
+    final pictureInfo = await vg.loadPicture(SvgStringLoader(originSvg), null);
+    final width = pictureInfo.size.width.toInt();
+    final height = pictureInfo.size.height.toInt();
+    final svgImage = await pictureInfo.picture.toImage(width, height);
     final imageByteData =
         await svgImage.toByteData(format: ImageByteFormat.png);
     if (imageByteData == null) return;

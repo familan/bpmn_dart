@@ -2,8 +2,6 @@
 library bpmn_test;
 
 import 'package:test/test.dart';
-import 'package:universal_html/html.dart';
-
 import 'package:bpmn_dart/bpmn.dart';
 
 void main() {

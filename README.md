@@ -1,6 +1,6 @@
 # BPMN
 Use with `bpmn-js` library.
-<br> For web only. Forger about tests if use flutter.
+<br> For web only. Forget about tests if using flutter.
 
 ### How to
 
@@ -12,10 +12,10 @@ Check version of `bpmn-js` repository: `https://github.com/bpmn-io/bpmn-js.git`
 ```html
 <head>
 <!-- Bpmn -->
-<link rel="stylesheet" href="https://unpkg.com/bpmn-js@10.2.1/dist/assets/diagram-js.css">
-<link rel="stylesheet" href="https://unpkg.com/bpmn-js@10.2.1/dist/assets/bpmn-font/css/bpmn.css">
+<link rel="stylesheet" href="https://unpkg.com/bpmn-js@17.11.1/dist/assets/diagram-js.css">
+<link rel="stylesheet" href="https://unpkg.com/bpmn-js@17.11.1/dist/assets/bpmn-font/css/bpmn.css">
 
-<script src="https://unpkg.com/bpmn-js@10.2.1/dist/bpmn-modeler.development.js"></script>
+<script src="https://unpkg.com/bpmn-js@17.11.1/dist/bpmn-modeler.development.js"></script>
 
 <!-- Dart -->
 <script defer src="main.dart.js"></script>
@@ -46,7 +46,7 @@ Future<void> main() async {
 ##### Run examples:
 ```bash
 dart pub global activate webdev
-cd /example/navigated_viewer/
+cd example/navigated_viewer/
 webdev serve
 open http://127.0.0.1:8080
 ```
