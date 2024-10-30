@@ -1,11 +1,11 @@
 {
-    "name": "flutter_bpmn_view",
-    "short_name": "flutter_bpmn_view",
+    "name": "flutter_bpmn_modeler",
+    "short_name": "flutter_bpmn_modeler",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "A simple Flutter web-only project",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

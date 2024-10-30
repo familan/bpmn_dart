@@ -18,7 +18,7 @@
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+  <meta name="description" content="A simple Flutter web-only project">
 
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -32,14 +32,14 @@
   <title>flutter_bpmn_view</title>
   <link rel="manifest" href="manifest.json">
 
-  <script>
+  <!-- <script>
     // The value below is injected by flutter build, do not touch.
     var serviceWorkerVersion = null;
-  </script>
+  </script> -->
   <!-- This script adds the flutter initialization JS code -->
-  <script src="flutter.js" defer></script>
+  <!-- <script src="flutter.js" defer></script> -->
 
-  <!-- Bpmn -->
+  <!-- bpmn -->
   <link rel="stylesheet" href="https://unpkg.com/bpmn-js@17.11.1/dist/assets/diagram-js.css">
   <link rel="stylesheet" href="https://unpkg.com/bpmn-js@17.11.1/dist/assets/bpmn-font/css/bpmn.css">
 
@@ -47,7 +47,7 @@
 
 </head>
 <body>
-  <script>
+  <!-- <script>
     window.addEventListener('load', function(ev) {
       // Download main.dart.js
       _flutter.loader.loadEntrypoint({
@@ -60,6 +60,8 @@
         return appRunner.runApp();
       });
     });
-  </script>
+  </script> -->
+  
+  <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
