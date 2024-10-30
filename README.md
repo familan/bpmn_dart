@@ -43,12 +43,12 @@ Future<void> main() async {
  - [modeler](/example/modeler/)
  - [flutter_widget](/example/flutter_widget/) <br>![flutter_widget_screenshot](/example/flutter_widget.png "Flutter widget example preview")
 
-##### Run examples:
+##### Run navigated_viewer and modeler examples:
 ```bash
 dart pub global activate webdev
 cd example/navigated_viewer/
 webdev serve
-open http://127.0.0.1:8080
+open http://127.0.0.1:8080 (or click on the "Serving `web`.." link in the terminal)
 ```
 
 ---
