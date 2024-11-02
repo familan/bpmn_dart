@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hovering/hovering.dart';
 import 'package:universal_html/html.dart' as html;
@@ -140,7 +139,7 @@ class BpmnViewFooter extends StatelessWidget {
     final encodedSvg = base64.encode(utf8.encode(svg));
     final uriData = "data:image/svg+xml;base64, $encodedSvg";
 
-    final originXml = await getXmlFromModeler(viewer);
+    final originXml = await getXmlFromViewer(viewer);
 
     final bpmn = Bpmn.parse(originXml);
     final name =
@@ -174,7 +173,7 @@ class BpmnViewFooter extends StatelessWidget {
     final encodedSvg = base64.encode(imageByteData.buffer.asUint8List());
     final uriData = "data:image/png;base64, $encodedSvg";
 
-    final originXml = await getXmlFromModeler(viewer);
+    final originXml = await getXmlFromViewer(viewer);
 
     final bpmn = Bpmn.parse(originXml);
     final name =
@@ -196,7 +195,7 @@ class BpmnViewFooter extends StatelessWidget {
     required NavigatedViewer viewer,
     String? saveFileName,
   }) async {
-    final originXml = await getXmlFromModeler(viewer);
+    final originXml = await getXmlFromViewer(viewer);
 
     final bpmn = Bpmn.parse(originXml);
     final name =

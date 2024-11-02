@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_bpmn_view_side_by_side/bpmn_view/bloc/bpmn_view_bloc.dart';
-import 'package:flutter_bpmn_view_side_by_side/bpmn_view/bpmn_view.dart';
+import 'bpmn_view/bloc/bpmn_view_bloc.dart';
+import 'bpmn_view/bpmn_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -58,7 +58,6 @@ class MyApp extends StatelessWidget {
       </bpmndi:BPMNDiagram>
     </definitions>
     """;
-
     final firstBloc = BpmnViewBloc(xml: xml);
     final secondBloc = BpmnViewBloc(xml: xml);
 

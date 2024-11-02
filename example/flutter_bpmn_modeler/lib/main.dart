@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_bpmn_modeler/bpmn_modeler/bloc/bpmn_modeler_bloc.dart';
-import 'package:flutter_bpmn_modeler/bpmn_modeler/bpmn_modeler.dart';
+import 'bpmn_modeler/bloc/bpmn_modeler_bloc.dart';
+import 'bpmn_modeler/bpmn_modeler.dart';
 
 void main() {
   runApp(const MyApp());

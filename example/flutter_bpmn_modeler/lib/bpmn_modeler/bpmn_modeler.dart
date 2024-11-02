@@ -1,22 +1,23 @@
 import 'dart:async';
+import 'dart:ui_web' as ui;
+
+import 'package:flutter/material.dart';
+import 'package:uuid/uuid.dart';
+import 'package:universal_html/html.dart';
 
 import 'package:bpmn_dart/bpmnjs_modeler.dart';
-import 'package:flutter/material.dart';
-import 'package:universal_html/html.dart';
-import 'package:uuid/uuid.dart';
 
 import 'bloc/bpmn_modeler_bloc.dart';
 import 'bpmn_modeler_footer.dart';
-import 'ui/ui.dart';
 
 class BpmnModeler extends StatefulWidget {
-  final TextEditingController? name;
   final BpmnModelerBlocInterface bloc;
+  final TextEditingController? name;
 
   const BpmnModeler({
     super.key,
-    this.name,
     required this.bloc,
+    this.name,
   });
 
   @override

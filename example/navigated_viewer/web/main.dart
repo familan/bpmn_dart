@@ -1,3 +1,4 @@
+// Run using webdev (see readme)
 import 'dart:html';
 
 import 'package:bpmn_dart/bpmn.dart';
@@ -20,7 +21,7 @@ Future<void> main() async {
 </bpmn2:definitions>
 """;
 
-  final _ = Bpmn.parse(xml);
+  Bpmn.parse(xml);
 
   final element = querySelector('#output');
   final view = NavigatedViewer(BpmnOptions(container: element));

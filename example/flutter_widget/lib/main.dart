@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_widget/bpmn_view.dart';
+
+import 'bpmn_view.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'flutter_widget',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
-        appBar: AppBar(title: const Text("BpmnView")),
+        appBar: AppBar(title: const Text("Embedded BPMN Demo")),
         body: const BpmnView(),
       ),
     );

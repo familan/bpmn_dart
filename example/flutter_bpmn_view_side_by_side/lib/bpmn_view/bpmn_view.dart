@@ -1,13 +1,13 @@
 import 'dart:async';
+import 'dart:ui_web' as ui;
 
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter/scheduler.dart';
 import 'package:uuid/uuid.dart';
 import 'package:universal_html/html.dart';
+
 import 'package:bpmn_dart/bpmnjs_navigated_viewer.dart';
 
-import 'ui/ui.dart';
 import 'bloc/bpmn_view_bloc.dart';
 import 'bpmn_view_footer.dart';
 
@@ -27,19 +27,17 @@ class BpmnView extends StatefulWidget {
 
 class _BpmnViewState extends State<BpmnView> {
   late BpmnViewBlocInterface bpmnViewBloc;
-  NavigatedViewer? navigatedViewer;
   BpmnCanvas? bpmnCanvas;
 
   StreamSubscription<BpmnViewState>? streamSubscription;
+  NavigatedViewer? navigatedViewer;
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
 
     bpmnViewBloc = widget.bloc;
-
-    const event = ReadXml();
-    bpmnViewBloc.getController().add(event);
+    bpmnViewBloc.getController().add(const ReadXml());
 
     streamSubscription = bpmnViewBloc.getStream().listen((state) {
       if (state is ViewboxUpdate) {
@@ -52,7 +50,6 @@ class _BpmnViewState extends State<BpmnView> {
         final viewbox = canvas.viewbox();
 
         if (updatedViewbox.compareTo(viewbox)) return;
-
         canvas.viewbox(updatedViewbox);
       }
     });
@@ -80,7 +77,9 @@ class _BpmnViewState extends State<BpmnView> {
             ..style.left = "0"
             ..style.top = "0"
             ..style.right = "0"
-            ..style.bottom = "0";
+            ..style.bottom = "0"
+            ..style.width = '100%'
+            ..style.height = '100%';
 
           final viewer = NavigatedViewer(BpmnOptions(container: area));
           navigatedViewer = viewer;

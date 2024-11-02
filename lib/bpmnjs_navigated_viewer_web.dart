@@ -1,6 +1,5 @@
 // ignore_for_file: prefer-match-file-name
-
-@JS('BpmnJS')
+@JS()
 library bpmnjs;
 
 import 'dart:math';
@@ -13,13 +12,6 @@ import 'package:js/js_util.dart';
 class BpmnOptions {
   external String get container;
   external factory BpmnOptions({container});
-}
-
-@JS()
-@anonymous
-class SaveSVGOptions {
-  external bool get format;
-  external factory SaveSVGOptions({format});
 }
 
 @JS()
@@ -39,10 +31,10 @@ class SaveSvgOptions {
 @JS()
 @anonymous
 class CanvasViewbox {
-  external double get x;
-  external double get y;
-  external double get width;
-  external double get height;
+  external int get x;
+  external int get y;
+  external int get width;
+  external int get height;
 
   external factory CanvasViewbox({x, y, width, height});
 }
@@ -107,15 +99,16 @@ class BpmnSavedSvgResponse {
   external factory BpmnSavedSvgResponse();
 }
 
-@JS()
+@JS('BpmnJS')
 class NavigatedViewer {
   external NavigatedViewer(BpmnOptions options);
 
-  /// importXml - нужен для отображения bpmn в html элементе.
-  /// Если нужно сделать что-то с NavigatedViewer после импортирования xml,
-  /// нужно использоваться Future и
-  /// тот же NavigatedViewer(не тот что возвращается из importXML).
-  /// Пример:
+  /// importXml - needed to display bpmn in html element.
+  /// If you need to do something with NavigatedViewer after importing xml,
+  /// Future must be used and the same NavigatedViewer (not the one returned
+  /// from importXML).
+  ///
+  /// Example:
   ///   void importXML(String xml) {
   //     _navigator.importXML(xml);
   //     Future(() {
@@ -123,7 +116,7 @@ class NavigatedViewer {
   //       canvas.zoom('fit-viewport');
   //     });
   //   }
-  external Future<Object> importXML(String xml);
+  external Future<NavigatedViewer> importXML(String xml);
 
   external Future<BpmnSavedXmlResponse> saveXML(SaveXMLOptions options);
   external Future<BpmnSavedSvgResponse> saveSVG(SaveSvgOptions options);
@@ -155,23 +148,26 @@ extension OnCallback on NavigatedViewer {
   }
 }
 
-/// It takes a NavigatedViewer and returns a Future that resolves to the XML of the modeler
+/// It takes a NavigatedViewer and returns a Future that resolves to the
+/// XML of the modeler.
 ///
 /// Args:
-///   modeler (NavigatedViewer): The modeler instance
-Future<String> getXmlFromModeler(NavigatedViewer modeler) async =>
-    promiseToFuture(modeler.saveXML(SaveXMLOptions(format: true)))
+///   viewer (NavigatedViewer): The NavigatedViewer instance
+Future<String> getXmlFromViewer(NavigatedViewer viewer) async =>
+    promiseToFuture(viewer.saveXML(SaveXMLOptions(format: true)))
         .then((response) => response.xml);
 
-/// It takes a NavigatedViewer, and returns a Future that resolves to a String containing the SVG
+/// It takes a NavigatedViewer and returns a Future that resolves to
+/// a String containing the SVG.
 ///
 /// Args:
-///   viewer (NavigatedViewer): The NavigatedViewer object that you want to get the SVG from.
+///   viewer (NavigatedViewer): The NavigatedViewer object from which you
+///   want to get the SVG.
 Future<String> getSvgFromViewer(NavigatedViewer viewer) async =>
     promiseToFuture(viewer.saveSVG(SaveSvgOptions(format: true)))
         .then((response) => response.svg);
 
-/// It sets the viewbox of the canvas to be centered around the given point
+/// It sets the viewbox of the canvas to be centered around the given point.
 ///
 /// Args:
 ///   point (Point): The point around which the viewbox should be centered.

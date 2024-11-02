@@ -1,5 +1,4 @@
 // ignore_for_file: prefer-match-file-name
-
 library bpmnjs;
 
 import 'dart:math';
@@ -7,11 +6,6 @@ import 'dart:math';
 class BpmnOptions {
   external String get container;
   external factory BpmnOptions({container});
-}
-
-class SaveSVGOptions {
-  external bool get format;
-  external factory SaveSVGOptions({format});
 }
 
 class SaveXMLOptions {
@@ -91,7 +85,7 @@ extension OnCallback on NavigatedViewer {
   void onImportRenderComplete(OnCallbackCallback _) {} // ignore: no-empty-block
 }
 
-Future<String> getXmlFromModeler(NavigatedViewer _) async => "";
+Future<String> getXmlFromViewer(NavigatedViewer _) async => "";
 
 Future<String> getSvgFromViewer(NavigatedViewer _) async => "";
 

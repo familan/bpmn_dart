@@ -1,13 +1,13 @@
 import 'dart:async';
+import 'dart:ui_web' as ui;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-
-import 'package:uuid/uuid.dart';
 import 'package:universal_html/html.dart';
+import 'package:uuid/uuid.dart';
+
 import 'package:bpmn_dart/bpmnjs_navigated_viewer.dart';
 
-import 'ui/ui.dart';
 import 'bloc/bpmn_view_bloc.dart';
 import 'bpmn_view_footer.dart';
 

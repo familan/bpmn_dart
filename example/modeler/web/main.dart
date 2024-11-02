@@ -1,3 +1,4 @@
+// Run using webdev (see readme)
 import 'dart:html';
 
 import 'package:bpmn_dart/bpmn.dart';
@@ -17,7 +18,7 @@ Future<void> main() async {
       </bpmn:definitions>
       """;
 
-  final bpmn = Bpmn.parse(xml);
+  Bpmn.parse(xml);
 
   final element = querySelector('#output');
   final view = BpmnJS(BpmnOptions(container: element));

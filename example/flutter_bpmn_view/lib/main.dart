@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_bpmn_view/bpmn_view/bloc/bpmn_view_bloc.dart';
-import 'package:flutter_bpmn_view/bpmn_view/bpmn_view.dart';
+import 'bpmn_view/bloc/bpmn_view_bloc.dart';
+import 'bpmn_view/bpmn_view.dart';
 
 void main() {
   runApp(const MyApp());

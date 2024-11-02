@@ -48,9 +48,9 @@ Future<void> main() async {
 dart pub global activate webdev
 cd example/navigated_viewer/
 webdev serve
-open http://127.0.0.1:8080 (or click on the "Serving `web`.." link in the terminal)
 ```
-
+Click "Serving `web` on http://127.0.0.1:8080" link.
+Press Ctrl-C, then Y, to interrupt webdev batch process.
 ---
 
 ### Run tests:

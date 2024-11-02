@@ -99,15 +99,16 @@ class BpmnSavedSvgResponse {
   external factory BpmnSavedSvgResponse();
 }
 
-@JS('BpmnJS')
+@JS()
 class BpmnJS {
   external BpmnJS(BpmnOptions options);
 
-  /// importXml - нужен для отображения bpmn в html элементе.
-  /// Если нужно сделать что-то с Modeler после импортирования xml,
-  /// нужно использоваться Future и
-  /// тот же Modeler(не тот что возвращается из importXML).
-  /// Пример:
+  /// importXml - needed to display bpmn in html element.
+  /// If you need to do something with Modeler after importing xml,
+  /// Future must be used and the same Modeler (not the one returned
+  /// from importXML).
+  ///
+  /// Example:
   ///   void importXML(String xml) {
   //     _modeler.importXML(xml);
   //     Future(() {
