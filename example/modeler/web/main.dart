@@ -1,5 +1,7 @@
 // Run using webdev (see readme)
-import 'dart:html';
+import 'dart:math';
+
+import 'package:web/web.dart';
 
 import 'package:bpmn_dart/bpmn.dart';
 import 'package:bpmn_dart/bpmnjs_modeler.dart';
@@ -20,7 +22,7 @@ Future<void> main() async {
 
   Bpmn.parse(xml);
 
-  final element = querySelector('#output');
+  final element = document.querySelector('#output');
   final view = BpmnJS(BpmnOptions(container: element));
   view.importXML(xml);
 
