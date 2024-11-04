@@ -37,7 +37,6 @@ class _BpmnViewState extends State<BpmnView> {
 
     id = const Uuid().v4();
 
-    // ignore: undefined_prefixed_name
     ui.platformViewRegistry.registerViewFactory(
       id,
       (int viewId) => area,

@@ -82,12 +82,19 @@ class _BpmnViewState extends State<BpmnView> {
 
         if (state is XmlReadSuccessful) {
           final id = const Uuid().v4();
-          final area = DivElement()..id = id;
+          final area = DivElement()
+            ..id = id
+            ..style.position = "relative"
+            ..style.left = "0"
+            ..style.top = "0"
+            ..style.right = "0"
+            ..style.bottom = "0"
+            ..style.width = '100%'
+            ..style.height = '100%';
 
           final viewer = NavigatedViewer(BpmnOptions(container: area));
           navigatedViewer = viewer;
 
-          // ignore: undefined_prefixed_name
           ui.platformViewRegistry.registerViewFactory(id, (int viewId) => area);
 
           return Stack(

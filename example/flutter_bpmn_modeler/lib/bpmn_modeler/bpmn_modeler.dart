@@ -62,7 +62,15 @@ class _BpmnModelerState extends State<BpmnModeler> {
 
   Future<void> setUpModeler() async {
     areaId = const Uuid().v4();
-    final area = DivElement()..id = areaId;
+    final area = DivElement()
+      ..id = areaId
+      ..style.position = "relative"
+      ..style.left = "0"
+      ..style.top = "0"
+      ..style.right = "0"
+      ..style.bottom = "0"
+      ..style.width = '100%'
+      ..style.height = '100%';
     ui.platformViewRegistry.registerViewFactory(areaId, (int id) => area);
 
     modeler = BpmnJS(BpmnOptions(container: area));
