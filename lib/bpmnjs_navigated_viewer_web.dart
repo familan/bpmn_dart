@@ -1,6 +1,6 @@
 // ignore_for_file: prefer-match-file-name
 @JS()
-library bpmnjs;
+library;
 
 import 'dart:math';
 
